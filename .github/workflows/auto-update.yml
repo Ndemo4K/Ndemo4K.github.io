@@ -1,0 +1,90 @@
+name: Auto Update Portfolio
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs every day at midnight
+  workflow_dispatch:       # Can also be triggered manually
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout portfolio repo
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch GitHub repos and update projects section
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Fetch all public repos
+            const repos = await github.rest.repos.listForUser({
+              username: 'Ndemo4K',
+              sort: 'pushed',
+              per_page: 50
+            });
+
+            const SKIP = ['Ndemo4K.github.io', 'Ndemo4K'];
+            const PINNED = [
+              { tag: 'Project_01 · SQL', name: 'Layoffs Data Cleaning', desc: 'End-to-end SQL data cleaning project covering standardization, deduplication, null handling, and validation.', topics: ['MySQL', 'Data Cleaning', 'SQL'], url: 'https://github.com/Ndemo4K' },
+              { tag: 'Project_02 · SQL', name: 'SaaS Customer Churn Analysis', desc: 'Pure SQL churn analysis classifying customers by financial behavior, engagement patterns, and usage trends.', topics: ['MySQL 8.0', 'Churn Analysis', 'Business Intel'], url: 'https://github.com/Ndemo4K' },
+              { tag: 'Project_03 · SQL + Tableau', name: 'Healthcare Claims Analysis', desc: 'Identified healthcare cost leakage by analysing ICD/CPT codes, member demographics, and paid-to-billed ratios.', topics: ['SQL', 'Tableau', 'Healthcare'], url: 'https://github.com/Ndemo4K' },
+              { tag: 'Project_04 · Automation', name: 'G-Plus Tracker', desc: 'Transformed a Nairobi garbage collection business manual payment system into a data-driven automation.', topics: ['Google Sheets', 'Apps Script', 'Web App'], url: 'https://github.com/Ndemo4K' },
+            ];
+
+            function getTag(name) {
+              name = name.toLowerCase();
+              if (/ml|model|predict|price/.test(name)) return 'Machine Learning';
+              if (/sql|query|db/.test(name)) return 'SQL';
+              if (/dashboard|bi|power/.test(name)) return 'Power BI';
+              if (/scrape|scraper|etl/.test(name)) return 'Data Engineering';
+              if (/auto|script|bot|tracker/.test(name)) return 'Automation';
+              return 'Python';
+            }
+
+            function buildCard(p) {
+              const tags = p.topics.map(t => `<span class="tag">${t}</span>`).join('');
+              return `<div class="project-card"><span class="project-tag">${p.tag}</span><h3>${p.name}</h3><p>${p.desc}</p><div class="project-tags">${tags}</div><a href="${p.url}" target="_blank">↗</a></div>`;
+            }
+
+            let html = PINNED.map(buildCard).join('\n');
+            let idx = PINNED.length + 1;
+
+            for (const repo of repos.data) {
+              if (SKIP.includes(repo.name) || repo.fork) continue;
+              const tag = getTag(repo.name);
+              const name = repo.name.replace(/-/g,' ').replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase());
+              const desc = repo.description || `A ${tag} project by Kevin Ndemo.`;
+              const topics = repo.topics && repo.topics.length ? repo.topics.slice(0,4) : [tag];
+              html += '\n' + buildCard({ tag: `Project_0${idx} · ${tag}`, name, desc, topics, url: repo.html_url });
+              idx++;
+            }
+
+            // Read and update index.html
+            let content = fs.readFileSync('index.html', 'utf8');
+            const start = '<!-- AUTO-PROJECTS-START -->';
+            const end = '<!-- AUTO-PROJECTS-END -->';
+            const newBlock = `${start}\n${html}\n${end}`;
+
+            if (content.includes(start)) {
+              content = content.replace(new RegExp(`${start}[\\s\\S]*?${end}`), newBlock);
+            } else {
+              content = content.replace('</body>', `${newBlock}\n</body>`);
+            }
+
+            fs.writeFileSync('index.html', content);
+            console.log('Portfolio updated with', idx - 1, 'projects');
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "Portfolio Bot"
+          git config user.email "bot@ndemo4k.github.io"
+          git add index.html
+          git diff --staged --quiet || git commit -m "Auto-sync: update projects from GitHub"
+          git push
