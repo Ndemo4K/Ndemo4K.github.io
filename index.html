@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kevin Ndemo â Data Analytics Portfolio</title>
+<title>Kevin Ndemo &mdash; Data Analytics Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
@@ -34,41 +34,32 @@ body {
 ::-webkit-scrollbar-track { background:var(--bg); }
 ::-webkit-scrollbar-thumb { background:var(--cyan); border-radius:2px; }
 
-/* âââ NAV âââ */
+/* NAV */
 nav {
-  position: fixed;
-  top:0; left:0; right:0;
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: fixed; top:0; left:0; right:0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 1.1rem 5rem;
   background: rgba(6,11,18,0.88);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
 }
 .nav-logo {
-  font-family:'Syne',sans-serif;
-  font-size:1.45rem; font-weight:800;
-  color:var(--cyan); letter-spacing:-.02em;
-  text-decoration:none;
+  font-family:'Syne',sans-serif; font-size:1.45rem; font-weight:800;
+  color:var(--cyan); letter-spacing:-.02em; text-decoration:none;
   text-shadow: 0 0 20px rgba(0,212,255,.35);
 }
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
 .nav-links a {
   color:var(--muted); text-decoration:none;
   font-size:.78rem; letter-spacing:.12em; text-transform:uppercase;
-  font-family:'JetBrains Mono',monospace;
-  transition:color .2s;
+  font-family:'JetBrains Mono',monospace; transition:color .2s;
 }
 .nav-links a:hover { color:var(--cyan); }
 
-/* âââ HERO âââ */
+/* HERO */
 #hero {
-  min-height:100vh;
-  display:flex; align-items:center;
-  position:relative; overflow:hidden;
-  padding: 80px 5rem 0;
+  min-height:100vh; display:flex; align-items:center;
+  position:relative; overflow:hidden; padding: 80px 5rem 0;
 }
 .hero-grid {
   position:absolute; inset:0;
@@ -81,18 +72,14 @@ nav {
 @keyframes gridDrift { to { transform:translateY(64px); } }
 
 .hero-orb {
-  position:absolute;
-  width:700px; height:700px; border-radius:50%;
+  position:absolute; width:700px; height:700px; border-radius:50%;
   background:radial-gradient(circle, rgba(0,212,255,.07) 0%, transparent 65%);
-  top:-160px; left:-180px;
-  animation:orbPulse 8s ease-in-out infinite;
+  top:-160px; left:-180px; animation:orbPulse 8s ease-in-out infinite;
 }
 .hero-orb2 {
-  position:absolute;
-  width:400px; height:400px; border-radius:50%;
+  position:absolute; width:400px; height:400px; border-radius:50%;
   background:radial-gradient(circle, rgba(255,122,60,.06) 0%, transparent 65%);
-  bottom:-80px; right:5%;
-  animation:orbPulse 10s ease-in-out infinite reverse;
+  bottom:-80px; right:5%; animation:orbPulse 10s ease-in-out infinite reverse;
 }
 @keyframes orbPulse {
   0%,100% { transform:scale(1); opacity:.6; }
@@ -100,51 +87,33 @@ nav {
 }
 
 .hero-content { position:relative; z-index:1; max-width:820px; }
-
 .hero-tag {
-  font-family:'JetBrains Mono',monospace;
-  font-size:.75rem; color:var(--cyan);
-  letter-spacing:.22em; text-transform:uppercase;
-  margin-bottom:1.6rem;
+  font-family:'JetBrains Mono',monospace; font-size:.75rem; color:var(--cyan);
+  letter-spacing:.22em; text-transform:uppercase; margin-bottom:1.6rem;
   opacity:0; animation:fadeUp .6s ease forwards .2s;
 }
 .hero-tag::before { content:'// '; opacity:.45; }
-
 .hero-name {
-  font-family:'Syne',sans-serif;
-  font-size:clamp(3.5rem,8vw,7.5rem);
-  font-weight:800; line-height:.93;
-  letter-spacing:-.035em; color:#fff;
-  margin-bottom:1rem;
-  opacity:0; animation:fadeUp .7s ease forwards .4s;
+  font-family:'Syne',sans-serif; font-size:clamp(3.5rem,8vw,7.5rem);
+  font-weight:800; line-height:.93; letter-spacing:-.035em; color:#fff;
+  margin-bottom:1rem; opacity:0; animation:fadeUp .7s ease forwards .4s;
 }
-.hero-name span {
-  color:var(--cyan);
-  text-shadow:0 0 50px rgba(0,212,255,.45);
-}
-
+.hero-name span { color:var(--cyan); text-shadow:0 0 50px rgba(0,212,255,.45); }
 .hero-typewriter {
-  font-family:'JetBrains Mono',monospace;
-  font-size:1.1rem; color:var(--orange);
+  font-family:'JetBrains Mono',monospace; font-size:1.1rem; color:var(--orange);
   margin-bottom:1.8rem; min-height:1.8rem;
   opacity:0; animation:fadeUp .7s ease forwards .6s;
 }
 .cursor { animation:blink .8s step-end infinite; }
 @keyframes blink { 50% { opacity:0; } }
-
 .hero-desc {
   font-size:1.05rem; color:var(--muted); line-height:1.85;
   max-width:560px; margin-bottom:3rem;
   opacity:0; animation:fadeUp .7s ease forwards .8s;
 }
-
-.hero-btns {
-  display:flex; gap:1rem; flex-wrap:wrap;
-  opacity:0; animation:fadeUp .7s ease forwards 1s;
-}
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeUp .7s ease forwards 1s; }
 .btn-primary {
-  padding:.85rem 2.2rem;
-  background:var(--cyan); color:var(--bg);
+  padding:.85rem 2.2rem; background:var(--cyan); color:var(--bg);
   font-family:'Syne',sans-serif; font-weight:700;
   font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
   border:none; cursor:pointer; text-decoration:none;
@@ -153,88 +122,68 @@ nav {
 }
 .btn-primary:hover { background:#fff; box-shadow:0 0 35px rgba(0,212,255,.45); }
 .btn-secondary {
-  padding:.85rem 2.2rem;
-  background:transparent; color:var(--cyan);
+  padding:.85rem 2.2rem; background:transparent; color:var(--cyan);
   font-family:'Syne',sans-serif; font-weight:700;
   font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
-  border:1px solid var(--border); cursor:pointer; text-decoration:none;
-  transition:all .25s;
+  border:1px solid var(--border); cursor:pointer; text-decoration:none; transition:all .25s;
 }
 .btn-secondary:hover { border-color:var(--cyan); background:var(--cyan-dim); }
 
-/* âââ SCROLL DOWN âââ */
 .scroll-hint {
   position:absolute; bottom:2.5rem; left:5rem;
-  font-family:'JetBrains Mono',monospace;
-  font-size:.7rem; color:var(--muted); letter-spacing:.15em;
+  font-family:'JetBrains Mono',monospace; font-size:.7rem;
+  color:var(--muted); letter-spacing:.15em;
   display:flex; align-items:center; gap:.75rem;
   opacity:0; animation:fadeUp .6s ease forwards 1.4s;
 }
 .scroll-hint::before {
-  content:'';
-  display:block; width:1px; height:50px;
+  content:''; display:block; width:1px; height:50px;
   background:linear-gradient(to bottom, var(--cyan), transparent);
 }
 
-/* âââ COMMON SECTION âââ */
+/* SECTIONS */
 .sec { padding:6rem 5rem; max-width:1220px; margin:0 auto; }
 .full-bleed { border-top:1px solid var(--border); background:var(--bg2); }
-.full-bleed .sec { max-width:1220px; }
 section { border-top:1px solid var(--border); }
 
 .section-label {
-  font-family:'JetBrains Mono',monospace;
-  font-size:.72rem; color:var(--cyan);
-  letter-spacing:.22em; text-transform:uppercase;
-  margin-bottom:.7rem;
+  font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--cyan);
+  letter-spacing:.22em; text-transform:uppercase; margin-bottom:.7rem;
   display:flex; align-items:center; gap:.75rem;
 }
 .section-label::after { content:''; height:1px; width:55px; background:var(--cyan); opacity:.35; }
 .section-title {
-  font-family:'Syne',sans-serif;
-  font-size:clamp(1.9rem,3.5vw,2.9rem);
-  font-weight:800; letter-spacing:-.025em; color:#fff;
-  margin-bottom:3rem;
+  font-family:'Syne',sans-serif; font-size:clamp(1.9rem,3.5vw,2.9rem);
+  font-weight:800; letter-spacing:-.025em; color:#fff; margin-bottom:3rem;
 }
 
-/* âââ ABOUT âââ */
+/* ABOUT */
 .about-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:5rem; align-items:start; }
 .about-avatar {
   aspect-ratio:1; border:1px solid var(--border);
-  background:var(--bg2); position:relative; overflow:hidden;
-  max-width:380px;
+  background:var(--bg2); position:relative; overflow:hidden; max-width:380px;
 }
 .about-avatar::after {
   content:''; position:absolute; inset:0;
   background:linear-gradient(135deg,var(--cyan-dim),transparent 55%);
 }
 .corner-mark {
-  position:absolute; bottom:0; right:0;
-  width:70px; height:70px;
-  border-top:1px solid rgba(0,212,255,.4);
-  border-left:1px solid rgba(0,212,255,.4);
-  z-index:2;
+  position:absolute; bottom:0; right:0; width:70px; height:70px;
+  border-top:1px solid rgba(0,212,255,.4); border-left:1px solid rgba(0,212,255,.4); z-index:2;
 }
-
 .about-body p { color:var(--muted); line-height:1.9; font-size:.98rem; margin-bottom:1.4rem; }
 .about-body strong { color:var(--text); font-weight:500; }
-
 .stats-row {
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:1px; margin-top:2.5rem;
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:2.5rem;
   border:1px solid var(--border); background:var(--border);
 }
 .stat { background:var(--bg); padding:1.4rem; text-align:center; }
 .stat-n { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; color:var(--cyan); }
 .stat-l { font-size:.7rem; color:var(--muted); font-family:'JetBrains Mono',monospace; letter-spacing:.1em; text-transform:uppercase; margin-top:.25rem; }
 
-/* âââ SKILLS âââ */
+/* SKILLS */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1.5rem; }
-.skill-card {
-  background:var(--bg); border:1px solid var(--border);
-  padding:2rem; transition:border-color .3s;
-  position:relative;
-}
+.skill-card { background:var(--bg); border:1px solid var(--border); padding:2rem; transition:border-color .3s; }
 .skill-card:hover { border-color:rgba(0,212,255,.35); }
 .skill-card-title {
   font-family:'Syne',sans-serif; font-size:.82rem; font-weight:700;
@@ -254,15 +203,13 @@ section { border-top:1px solid var(--border); }
 }
 .pills { display:flex; flex-wrap:wrap; gap:.55rem; }
 .pill {
-  padding:.28rem .85rem;
-  border:1px solid var(--border);
+  padding:.28rem .85rem; border:1px solid var(--border);
   font-family:'JetBrains Mono',monospace; font-size:.72rem;
-  color:var(--muted); letter-spacing:.04em;
-  transition:all .2s;
+  color:var(--muted); letter-spacing:.04em; transition:all .2s;
 }
 .pill:hover { border-color:var(--cyan); color:var(--cyan); background:var(--cyan-dim); }
 
-/* âââ PROJECTS âââ */
+/* PROJECTS */
 .projects-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr)); gap:1.4rem; }
 .project-card {
   background:var(--bg2); border:1px solid var(--border);
@@ -276,60 +223,48 @@ section { border-top:1px solid var(--border); }
 }
 .project-card:hover::before { transform:scaleX(1); }
 .project-card:hover {
-  border-color:rgba(0,212,255,.3);
-  transform:translateY(-4px);
+  border-color:rgba(0,212,255,.3); transform:translateY(-4px);
   box-shadow:0 24px 50px rgba(0,0,0,.45), 0 0 25px rgba(0,212,255,.05);
 }
 .proj-num { font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--muted); letter-spacing:.15em; margin-bottom:1rem; }
 .proj-title { font-family:'Syne',sans-serif; font-size:1.18rem; font-weight:700; color:#fff; margin-bottom:.55rem; letter-spacing:-.01em; }
 .proj-desc { color:var(--muted); font-size:.86rem; line-height:1.75; margin-bottom:1.1rem; flex:1; }
 
-/* Key metrics strip on cards */
 .proj-metrics {
   display:grid; grid-template-columns:repeat(3,1fr);
   gap:1px; margin-bottom:1.2rem;
   border:1px solid var(--border); background:var(--border);
 }
-.proj-metric { background:var(--bg3); padding:.55rem .3rem; text-align:center; }
+.proj-metric { background:var(--bg3); padding:.6rem .3rem; text-align:center; }
 .proj-metric-n {
-  font-family:'Syne',sans-serif; font-size:1rem; font-weight:800; color:var(--cyan);
-  line-height:1.1; margin-bottom:.18rem;
+  font-family:'Syne',sans-serif; font-size:1rem; font-weight:800;
+  color:var(--cyan); line-height:1.1; margin-bottom:.18rem;
 }
 .proj-metric-l {
   font-family:'JetBrains Mono',monospace; font-size:.55rem;
   color:var(--muted); text-transform:uppercase; letter-spacing:.06em;
 }
-
 .proj-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.2rem; }
 .proj-tag {
-  padding:.18rem .65rem; background:var(--bg3);
-  border:1px solid var(--border);
-  font-family:'JetBrains Mono',monospace; font-size:.68rem;
-  color:var(--cyan); letter-spacing:.04em;
+  padding:.18rem .65rem; background:var(--bg3); border:1px solid var(--border);
+  font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--cyan); letter-spacing:.04em;
 }
-
-/* Card action buttons */
 .proj-actions { display:flex; gap:.6rem; margin-top:auto; }
 .proj-btn {
-  padding:.5rem 1rem;
-  font-family:'JetBrains Mono',monospace; font-size:.7rem;
-  letter-spacing:.07em; cursor:pointer; border:none;
-  text-decoration:none; display:inline-flex; align-items:center;
-  gap:.35rem; transition:all .2s; white-space:nowrap;
+  padding:.5rem 1rem; font-family:'JetBrains Mono',monospace;
+  font-size:.7rem; letter-spacing:.07em; cursor:pointer;
+  border:none; text-decoration:none; display:inline-flex;
+  align-items:center; gap:.35rem; transition:all .2s; white-space:nowrap;
 }
 .proj-btn-primary { background:var(--cyan); color:var(--bg); font-weight:500; }
 .proj-btn-primary:hover { background:#fff; box-shadow:0 0 18px rgba(0,212,255,.35); }
-.proj-btn-outline {
-  background:transparent; color:var(--muted);
-  border:1px solid var(--border);
-}
+.proj-btn-outline { background:transparent; color:var(--muted); border:1px solid var(--border); }
 .proj-btn-outline:hover { color:var(--cyan); border-color:rgba(0,212,255,.4); }
 
-/* âââ MODAL OVERLAY âââ */
+/* MODAL */
 .modal-overlay {
   position:fixed; inset:0; z-index:500;
-  background:rgba(4,8,14,0.93);
-  backdrop-filter:blur(14px);
+  background:rgba(4,8,14,0.93); backdrop-filter:blur(14px);
   display:flex; align-items:flex-start; justify-content:center;
   padding:2rem 1rem 3rem;
   opacity:0; visibility:hidden;
@@ -345,34 +280,23 @@ section { border-top:1px solid var(--border); }
   margin:auto;
 }
 .modal-overlay.active .modal-box { transform:translateY(0); }
-
-/* Modal header */
 .modal-header {
-  padding:1.8rem 2.5rem;
-  border-bottom:1px solid var(--border);
+  padding:1.8rem 2.5rem; border-bottom:1px solid var(--border);
   display:flex; justify-content:space-between; align-items:flex-start;
   position:sticky; top:0; background:var(--bg2); z-index:10;
 }
-.modal-header-info {}
 .modal-type {
   font-family:'JetBrains Mono',monospace; font-size:.68rem;
-  color:var(--orange); letter-spacing:.2em; text-transform:uppercase;
-  margin-bottom:.4rem;
+  color:var(--orange); letter-spacing:.2em; text-transform:uppercase; margin-bottom:.4rem;
 }
-.modal-title {
-  font-family:'Syne',sans-serif; font-size:1.55rem;
-  font-weight:800; color:#fff; letter-spacing:-.02em;
-}
+.modal-title { font-family:'Syne',sans-serif; font-size:1.55rem; font-weight:800; color:#fff; letter-spacing:-.02em; }
 .modal-close {
-  background:none; border:1px solid var(--border);
-  color:var(--muted); cursor:pointer; font-size:1.1rem;
-  width:38px; height:38px; display:flex; align-items:center;
-  justify-content:center; flex-shrink:0; transition:all .2s;
-  margin-left:1rem;
+  background:none; border:1px solid var(--border); color:var(--muted);
+  cursor:pointer; font-size:1rem; width:38px; height:38px;
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; transition:all .2s; margin-left:1rem;
 }
 .modal-close:hover { border-color:var(--cyan); color:var(--cyan); background:var(--cyan-dim); }
-
-/* Modal body */
 .modal-body { padding:2rem 2.5rem; }
 .modal-section { margin-bottom:2.5rem; }
 .modal-section-label {
@@ -381,19 +305,11 @@ section { border-top:1px solid var(--border); }
   margin-bottom:1.1rem; display:flex; align-items:center; gap:.75rem;
 }
 .modal-section-label::after { content:''; height:1px; flex:1; background:var(--border); }
-.modal-overview {
-  color:var(--muted); line-height:1.88; font-size:.93rem;
-}
+.modal-overview { color:var(--muted); line-height:1.88; font-size:.93rem; }
 .modal-overview strong { color:var(--text); font-weight:500; }
 
-/* Charts grid */
-.modal-charts-grid {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:1.1rem; margin-bottom:1.3rem;
-}
-.modal-chart-card {
-  background:var(--bg); border:1px solid var(--border); padding:1.3rem;
-}
+.modal-charts-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; margin-bottom:1.3rem; }
+.modal-chart-card { background:var(--bg); border:1px solid var(--border); padding:1.3rem; }
 .modal-chart-title {
   font-family:'JetBrains Mono',monospace; font-size:.65rem;
   color:var(--muted); text-transform:uppercase; letter-spacing:.12em; margin-bottom:1rem;
@@ -402,33 +318,19 @@ section { border-top:1px solid var(--border); }
 .chart-wrap { position:relative; height:200px; }
 .chart-wrap-tall { position:relative; height:240px; }
 
-/* Key findings */
-.modal-findings-grid {
-  display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:.8rem;
-}
-.modal-finding {
-  background:var(--bg); border:1px solid var(--border);
-  border-left:2px solid var(--cyan); padding:.9rem 1rem;
-}
+.modal-findings-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:.8rem; }
+.modal-finding { background:var(--bg); border:1px solid var(--border); border-left:2px solid var(--cyan); padding:.9rem 1rem; }
 .modal-finding strong {
-  display:block; font-family:'JetBrains Mono',monospace;
-  font-size:.65rem; color:var(--cyan); letter-spacing:.08em;
-  text-transform:uppercase; margin-bottom:.35rem;
+  display:block; font-family:'JetBrains Mono',monospace; font-size:.65rem;
+  color:var(--cyan); letter-spacing:.08em; text-transform:uppercase; margin-bottom:.35rem;
 }
 .modal-finding p { color:var(--text); font-size:.84rem; line-height:1.6; }
 
-/* Methodology */
-.modal-method {
-  background:var(--bg); border:1px solid var(--border); padding:1.3rem 1.5rem;
-}
-.modal-method ol {
-  list-style:none; counter-reset:steps; padding:0;
-}
+.modal-method { background:var(--bg); border:1px solid var(--border); padding:1.3rem 1.5rem; }
+.modal-method ol { list-style:none; counter-reset:steps; padding:0; }
 .modal-method ol li {
-  counter-increment:steps; position:relative;
-  padding-left:2.4rem; margin-bottom:.65rem;
-  color:var(--muted); font-size:.87rem; line-height:1.7;
+  counter-increment:steps; position:relative; padding-left:2.4rem;
+  margin-bottom:.65rem; color:var(--muted); font-size:.87rem; line-height:1.7;
 }
 .modal-method ol li::before {
   content:counter(steps,decimal-leading-zero);
@@ -436,8 +338,6 @@ section { border-top:1px solid var(--border); }
   color:var(--cyan); font-family:'JetBrains Mono',monospace; font-size:.7rem;
 }
 .modal-method ol li:last-child { margin-bottom:0; }
-
-/* Modal footer */
 .modal-footer {
   padding:1.4rem 2.5rem; border-top:1px solid var(--border);
   display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
@@ -445,26 +345,20 @@ section { border-top:1px solid var(--border); }
 .modal-footer-tags { display:flex; flex-wrap:wrap; gap:.4rem; flex:1; }
 .modal-footer-tag {
   padding:.18rem .65rem; border:1px solid var(--border);
-  font-family:'JetBrains Mono',monospace; font-size:.66rem;
-  color:var(--muted); letter-spacing:.04em;
+  font-family:'JetBrains Mono',monospace; font-size:.66rem; color:var(--muted); letter-spacing:.04em;
 }
 
-/* âââ EXPERIENCE âââ */
+/* EXPERIENCE */
 .timeline { padding-left:1.5rem; position:relative; }
 .timeline::before {
-  content:''; position:absolute;
-  left:0; top:8px; bottom:0; width:1px;
+  content:''; position:absolute; left:0; top:8px; bottom:0; width:1px;
   background:linear-gradient(to bottom, var(--cyan) 0%, transparent 100%);
 }
-.t-item {
-  position:relative; padding:0 0 3rem 3rem;
-  opacity:0; transform:translateX(-18px); transition:all .65s ease;
-}
+.t-item { position:relative; padding:0 0 3rem 3rem; opacity:0; transform:translateX(-18px); transition:all .65s ease; }
 .t-item.visible { opacity:1; transform:translateX(0); }
 .t-dot {
-  position:absolute; left:-7px; top:5px;
-  width:14px; height:14px; border-radius:50%;
-  border:2px solid var(--cyan); background:var(--bg);
+  position:absolute; left:-7px; top:5px; width:14px; height:14px;
+  border-radius:50%; border:2px solid var(--cyan); background:var(--bg);
   box-shadow:0 0 12px rgba(0,212,255,.45);
 }
 .t-period { font-family:'JetBrains Mono',monospace; font-size:.7rem; color:var(--orange); letter-spacing:.15em; text-transform:uppercase; margin-bottom:.35rem; }
@@ -472,39 +366,31 @@ section { border-top:1px solid var(--border); }
 .t-company { font-size:.88rem; color:var(--cyan); margin-bottom:.9rem; }
 .t-list { list-style:none; }
 .t-list li { color:var(--muted); font-size:.88rem; line-height:1.8; padding-left:1.2rem; position:relative; margin-bottom:.3rem; }
-.t-list li::before { content:'â'; position:absolute; left:0; color:var(--cyan); opacity:.55; font-size:.75rem; top:.05rem; }
+.t-list li::before { content:'\2192'; position:absolute; left:0; color:var(--cyan); opacity:.55; font-size:.75rem; top:.05rem; }
 
-/* âââ CONTACT âââ */
+/* CONTACT */
 .contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:5rem; align-items:start; }
 .contact-info h3 { font-family:'Syne',sans-serif; font-size:1.75rem; font-weight:700; color:#fff; letter-spacing:-.02em; margin-bottom:1rem; }
 .contact-info p { color:var(--muted); line-height:1.85; margin-bottom:2rem; font-size:.95rem; }
 .c-link {
-  display:flex; align-items:center; gap:.8rem;
-  color:var(--text); text-decoration:none;
-  font-size:.82rem; margin-bottom:.75rem; padding:.65rem .75rem;
-  border:1px solid transparent; transition:all .2s;
-  font-family:'JetBrains Mono',monospace;
+  display:flex; align-items:center; gap:.8rem; color:var(--text);
+  text-decoration:none; font-size:.82rem; margin-bottom:.75rem; padding:.65rem .75rem;
+  border:1px solid transparent; transition:all .2s; font-family:'JetBrains Mono',monospace;
 }
 .c-link:hover { border-color:var(--border); color:var(--cyan); background:var(--cyan-dim); }
-.c-icon {
-  width:30px; height:30px; border:1px solid var(--border);
-  display:flex; align-items:center; justify-content:center;
-  font-size:.8rem; flex-shrink:0;
-}
-
+.c-icon { width:30px; height:30px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:.8rem; flex-shrink:0; }
 .contact-form { display:flex; flex-direction:column; gap:.9rem; }
 .f-group { display:flex; flex-direction:column; gap:.35rem; }
 .f-label { font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--muted); letter-spacing:.15em; text-transform:uppercase; }
 .f-input, .f-textarea {
-  background:var(--bg2); border:1px solid var(--border);
-  color:var(--text); padding:.8rem 1rem;
-  font-family:'Outfit',sans-serif; font-size:.9rem;
+  background:var(--bg2); border:1px solid var(--border); color:var(--text);
+  padding:.8rem 1rem; font-family:'Outfit',sans-serif; font-size:.9rem;
   outline:none; transition:border-color .2s; resize:none;
 }
 .f-input:focus, .f-textarea:focus { border-color:rgba(0,212,255,.4); box-shadow:0 0 0 3px rgba(0,212,255,.05); }
 .f-textarea { min-height:130px; }
 
-/* âââ FOOTER âââ */
+/* FOOTER */
 footer {
   border-top:1px solid var(--border); padding:1.8rem 5rem;
   display:flex; justify-content:space-between; align-items:center;
@@ -513,15 +399,12 @@ footer {
 footer p { font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--muted); }
 footer a { color:var(--cyan); text-decoration:none; }
 
-/* âââ ANIMATIONS âââ */
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(22px); }
-  to { opacity:1; transform:translateY(0); }
-}
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
 .reveal { opacity:0; transform:translateY(28px); transition:all .7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
-/* âââ RESPONSIVE âââ */
+/* RESPONSIVE */
 @media(max-width:900px){
   nav { padding:1rem 1.8rem; }
   .nav-links { display:none; }
@@ -558,11 +441,11 @@ footer a { color:var(--cyan); text-decoration:none; }
   <div class="hero-orb"></div>
   <div class="hero-orb2"></div>
   <div class="hero-content">
-    <p class="hero-tag">Kevin Ndemo Ombwochi Â· Nairobi, Kenya</p>
+    <p class="hero-tag">Kevin Ndemo Ombwochi &middot; Nairobi, Kenya</p>
     <h1 class="hero-name">Kevin<br><span>Ndemo</span></h1>
     <p class="hero-typewriter"><span id="typewriter"></span><span class="cursor">_</span></p>
     <p class="hero-desc">
-      Turning raw data into decisions â through SQL, Power BI dashboards, and structured thinking.
+      Turning raw data into decisions &mdash; through SQL, Power BI dashboards, and structured thinking.
       Three years across ICT, data analysis, and executive operations.
     </p>
     <div class="hero-btns">
@@ -576,31 +459,31 @@ footer a { color:var(--cyan); text-decoration:none; }
 <!-- ABOUT -->
 <section id="about">
   <div class="sec" style="border:none; max-width:1220px;">
-    <p class="section-label">01 â Profile</p>
+    <p class="section-label">01 &mdash; Profile</p>
     <h2 class="section-title reveal">About Me</h2>
     <div class="about-grid">
       <div class="about-avatar reveal">
         <img src="https://raw.githubusercontent.com/Ndemo4K/Ndemo4K.github.io/main/IMG_8215.JPG"
-          alt="Kevin Ndemo Ombwochi"
-          style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; min-height:360px;">
+             alt="Kevin Ndemo Ombwochi"
+             style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; min-height:360px;">
         <div class="corner-mark"></div>
       </div>
       <div class="about-body reveal">
         <p>
-          Hi â I'm <strong>Kevin Ndemo Ombwochi</strong>, a data-focused professional currently serving as
+          Hi &mdash; I&apos;m <strong>Kevin Ndemo Ombwochi</strong>, a data-focused professional currently serving as
           <strong>Executive Assistant at Zolima</strong>, a real estate company in Nairobi.
           My technical foundation is a Diploma in Information &amp; Communications Technology
           from Eldoret Polytechnic.
         </p>
         <p>
           My data journey began at Wasker Enterprises, where I grew from
-          <strong>ICT Officer</strong> to <strong>Data Analyst</strong> â
+          <strong>ICT Officer</strong> to <strong>Data Analyst</strong> &mdash;
           building hands-on expertise in SQL, Power BI, ETL pipelines, and
           Excel Power Query. I enjoy finding patterns in complex datasets and
           translating them into clear, actionable insights.
         </p>
         <p>
-          Outside work I'm passionate about <strong>farming, music, and singing</strong> â
+          Outside work I&apos;m passionate about <strong>farming, music, and singing</strong> &mdash;
           creative outlets that keep my thinking fresh and grounded.
         </p>
         <div class="stats-row">
@@ -616,12 +499,12 @@ footer a { color:var(--cyan); text-decoration:none; }
 <!-- SKILLS -->
 <div id="skills" class="full-bleed">
   <div class="sec">
-    <p class="section-label">02 â Capabilities</p>
+    <p class="section-label">02 &mdash; Capabilities</p>
     <h2 class="section-title reveal">Skills &amp; Tools</h2>
     <div class="skills-grid">
 
       <div class="skill-card reveal">
-        <div class="skill-card-title">â Data &amp; Analysis</div>
+        <div class="skill-card-title">Data &amp; Analysis</div>
         <div class="skill-row">
           <div class="skill-label-row"><span class="skill-name">SQL</span><span class="skill-pct">85%</span></div>
           <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
@@ -641,7 +524,7 @@ footer a { color:var(--cyan); text-decoration:none; }
       </div>
 
       <div class="skill-card reveal">
-        <div class="skill-card-title">â Executive &amp; Ops</div>
+        <div class="skill-card-title">Executive &amp; Ops</div>
         <div class="skill-row">
           <div class="skill-label-row"><span class="skill-name">SOP Management</span><span class="skill-pct">88%</span></div>
           <div class="bar-track"><div class="bar-fill" data-w="88"></div></div>
@@ -661,7 +544,7 @@ footer a { color:var(--cyan); text-decoration:none; }
       </div>
 
       <div class="skill-card reveal">
-        <div class="skill-card-title">â Tech Stack</div>
+        <div class="skill-card-title">Tech Stack</div>
         <div class="pills">
           <span class="pill">SQL Server</span>
           <span class="pill">Power BI</span>
@@ -682,15 +565,15 @@ footer a { color:var(--cyan); text-decoration:none; }
 <!-- PROJECTS -->
 <section id="projects">
   <div class="sec" style="border:none; max-width:1220px;">
-    <p class="section-label">03 â Work</p>
+    <p class="section-label">03 &mdash; Work</p>
     <h2 class="section-title reveal">Projects</h2>
-    <div class="projects-grid" id="projects-container">
+    <div class="projects-grid">
 
       <!-- PROJECT 1 -->
       <div class="project-card reveal">
-        <div class="proj-num">Project_01 Â· SQL</div>
+        <div class="proj-num">Project_01 &middot; SQL</div>
         <h3 class="proj-title">Layoffs Data Cleaning</h3>
-        <p class="proj-desc">End-to-end SQL data cleaning covering standardization, deduplication, null handling, and validation â transforming 2,361 raw records into a fully analysis-ready dataset.</p>
+        <p class="proj-desc">End-to-end SQL data cleaning covering standardization, deduplication, null handling, and validation &mdash; transforming 2,361 raw records into a fully analysis-ready dataset.</p>
         <div class="proj-metrics">
           <div class="proj-metric"><div class="proj-metric-n">2,361</div><div class="proj-metric-l">Raw Records</div></div>
           <div class="proj-metric"><div class="proj-metric-n">366</div><div class="proj-metric-l">Dupes Removed</div></div>
@@ -702,16 +585,16 @@ footer a { color:var(--cyan); text-decoration:none; }
           <span class="proj-tag">SQL</span>
         </div>
         <div class="proj-actions">
-          <button class="proj-btn proj-btn-primary" onclick="openModal('modal1')">Case Study â</button>
-          <a href="https://github.com/Ndemo4K/mysql-layoffs-data-cleaning-project" target="_blank" class="proj-btn proj-btn-outline">View Code â</a>
+          <button class="proj-btn proj-btn-primary" onclick="openModal('modal1')">Case Study</button>
+          <a href="https://github.com/Ndemo4K/mysql-layoffs-data-cleaning-project" target="_blank" class="proj-btn proj-btn-outline">View Code</a>
         </div>
       </div>
 
       <!-- PROJECT 2 -->
       <div class="project-card reveal">
-        <div class="proj-num">Project_02 Â· SQL</div>
+        <div class="proj-num">Project_02 &middot; SQL</div>
         <h3 class="proj-title">SaaS Customer Churn Analysis</h3>
-        <p class="proj-desc">Pure SQL churn analysis classifying 5,000 customers by financial behavior, engagement patterns, and usage trends â delivering actionable intelligence on retention risk.</p>
+        <p class="proj-desc">Pure SQL churn analysis classifying 5,000 customers by financial behaviour, engagement patterns, and usage trends &mdash; delivering actionable intelligence on retention risk.</p>
         <div class="proj-metrics">
           <div class="proj-metric"><div class="proj-metric-n">5,000</div><div class="proj-metric-l">Customers</div></div>
           <div class="proj-metric"><div class="proj-metric-n">18%</div><div class="proj-metric-l">High Risk</div></div>
@@ -723,16 +606,16 @@ footer a { color:var(--cyan); text-decoration:none; }
           <span class="proj-tag">Business Intel</span>
         </div>
         <div class="proj-actions">
-          <button class="proj-btn proj-btn-primary" onclick="openModal('modal2')">Case Study â</button>
-          <a href="https://github.com/Ndemo4K/SaaS-churn-data-analysis-" target="_blank" class="proj-btn proj-btn-outline">View Code â</a>
+          <button class="proj-btn proj-btn-primary" onclick="openModal('modal2')">Case Study</button>
+          <a href="https://github.com/Ndemo4K/SaaS-churn-data-analysis-" target="_blank" class="proj-btn proj-btn-outline">View Code</a>
         </div>
       </div>
 
       <!-- PROJECT 3 -->
       <div class="project-card reveal">
-        <div class="proj-num">Project_03 Â· SQL + Tableau</div>
+        <div class="proj-num">Project_03 &middot; SQL + Tableau</div>
         <h3 class="proj-title">Healthcare Claims Analysis</h3>
-        <p class="proj-desc">Identified healthcare cost leakage by analysing ICD/CPT codes, member demographics, and paid-to-billed ratios â with SQL processing and Tableau executive dashboards.</p>
+        <p class="proj-desc">Identified healthcare cost leakage by analysing ICD/CPT codes, member demographics, and paid-to-billed ratios &mdash; with SQL processing and Tableau executive dashboards.</p>
         <div class="proj-metrics">
           <div class="proj-metric"><div class="proj-metric-n">$469K</div><div class="proj-metric-l">Leakage Found</div></div>
           <div class="proj-metric"><div class="proj-metric-n">5</div><div class="proj-metric-l">Departments</div></div>
@@ -744,16 +627,16 @@ footer a { color:var(--cyan); text-decoration:none; }
           <span class="proj-tag">Healthcare</span>
         </div>
         <div class="proj-actions">
-          <button class="proj-btn proj-btn-primary" onclick="openModal('modal3')">Case Study â</button>
-          <a href="https://github.com/Ndemo4K/healthcare-claims-analysis" target="_blank" class="proj-btn proj-btn-outline">View Code â</a>
+          <button class="proj-btn proj-btn-primary" onclick="openModal('modal3')">Case Study</button>
+          <a href="https://github.com/Ndemo4K/healthcare-claims-analysis" target="_blank" class="proj-btn proj-btn-outline">View Code</a>
         </div>
       </div>
 
       <!-- PROJECT 4 -->
       <div class="project-card reveal">
-        <div class="proj-num">Project_04 Â· Automation</div>
+        <div class="proj-num">Project_04 &middot; Automation</div>
         <h3 class="proj-title">G-Plus Tracker</h3>
-        <p class="proj-desc">Transformed a Nairobi garbage collection business's manual payment system into a data-driven automation â built with Google Sheets, Apps Script, and a mobile-first web app.</p>
+        <p class="proj-desc">Transformed a Nairobi garbage collection business&apos;s manual payment system into a data-driven automation &mdash; built with Google Sheets, Apps Script, and a mobile-first web app.</p>
         <div class="proj-metrics">
           <div class="proj-metric"><div class="proj-metric-n">+34%</div><div class="proj-metric-l">Revenue Capture</div></div>
           <div class="proj-metric"><div class="proj-metric-n">2%</div><div class="proj-metric-l">Error Rate</div></div>
@@ -765,8 +648,8 @@ footer a { color:var(--cyan); text-decoration:none; }
           <span class="proj-tag">Web App</span>
         </div>
         <div class="proj-actions">
-          <button class="proj-btn proj-btn-primary" onclick="openModal('modal4')">Case Study â</button>
-          <a href="https://github.com/Ndemo4K/g-plus-tracker" target="_blank" class="proj-btn proj-btn-outline">View Code â</a>
+          <button class="proj-btn proj-btn-primary" onclick="openModal('modal4')">Case Study</button>
+          <a href="https://github.com/Ndemo4K/g-plus-tracker" target="_blank" class="proj-btn proj-btn-outline">View Code</a>
         </div>
       </div>
 
@@ -777,15 +660,15 @@ footer a { color:var(--cyan); text-decoration:none; }
 <!-- EXPERIENCE -->
 <div id="experience" class="full-bleed">
   <div class="sec">
-    <p class="section-label">04 â Journey</p>
+    <p class="section-label">04 &mdash; Journey</p>
     <h2 class="section-title reveal">Work Experience</h2>
     <div class="timeline">
 
       <div class="t-item">
         <div class="t-dot"></div>
-        <div class="t-period">2024 â Present</div>
+        <div class="t-period">2024 &mdash; Present</div>
         <div class="t-role">Executive Assistant</div>
-        <div class="t-company">Zolima Â· Real Estate Â· Nairobi, Kenya</div>
+        <div class="t-company">Zolima &middot; Real Estate &middot; Nairobi, Kenya</div>
         <ul class="t-list">
           <li>Executive support, calendar coordination, and stakeholder management</li>
           <li>SOP documentation and operational process improvement</li>
@@ -796,9 +679,9 @@ footer a { color:var(--cyan); text-decoration:none; }
 
       <div class="t-item">
         <div class="t-dot"></div>
-        <div class="t-period">2023 â 2024</div>
+        <div class="t-period">2023 &mdash; 2024</div>
         <div class="t-role">Data Analyst</div>
-        <div class="t-company">Wasker Enterprises Â· Nairobi, Kenya</div>
+        <div class="t-company">Wasker Enterprises &middot; Nairobi, Kenya</div>
         <ul class="t-list">
           <li>Built and maintained SQL queries for business intelligence reporting</li>
           <li>Developed Power BI dashboards for KPI tracking and trend analysis</li>
@@ -809,9 +692,9 @@ footer a { color:var(--cyan); text-decoration:none; }
 
       <div class="t-item">
         <div class="t-dot"></div>
-        <div class="t-period">2022 â 2023</div>
+        <div class="t-period">2022 &mdash; 2023</div>
         <div class="t-role">ICT Officer</div>
-        <div class="t-company">Wasker Enterprises Â· Nairobi, Kenya</div>
+        <div class="t-company">Wasker Enterprises &middot; Nairobi, Kenya</div>
         <ul class="t-list">
           <li>Network monitoring, infrastructure setup and maintenance</li>
           <li>Hardware diagnostics, repairs, and system upgrades</li>
@@ -823,7 +706,7 @@ footer a { color:var(--cyan); text-decoration:none; }
         <div class="t-dot"></div>
         <div class="t-period">Education</div>
         <div class="t-role">Diploma in Information Communications Technology</div>
-        <div class="t-company">Eldoret Polytechnic Â· Eldoret, Kenya</div>
+        <div class="t-company">Eldoret Polytechnic &middot; Eldoret, Kenya</div>
         <ul class="t-list">
           <li>Foundation in information systems, networking, and software applications</li>
         </ul>
@@ -836,14 +719,14 @@ footer a { color:var(--cyan); text-decoration:none; }
 <!-- CONTACT -->
 <section id="contact">
   <div class="sec" style="border:none; max-width:1220px;">
-    <p class="section-label">05 â Connect</p>
+    <p class="section-label">05 &mdash; Connect</p>
     <h2 class="section-title reveal">Get In Touch</h2>
     <div class="contact-grid">
       <div class="reveal">
-        <h3>Let's work together.</h3>
-        <p>Whether you have a data project, a collaboration idea, or just want to connect â I'd love to hear from you.</p>
+        <h3>Let&apos;s work together.</h3>
+        <p>Whether you have a data project, a collaboration idea, or just want to connect &mdash; I&apos;d love to hear from you.</p>
         <a href="mailto:kevinndemo1999@gmail.com" class="c-link">
-          <span class="c-icon">â</span> kevinndemo1999@gmail.com
+          <span class="c-icon">@</span> kevinndemo1999@gmail.com
         </a>
         <a href="https://www.linkedin.com/in/kevin-ndemo" class="c-link" target="_blank">
           <span class="c-icon">in</span> linkedin.com/in/kevin-ndemo
@@ -866,7 +749,7 @@ footer a { color:var(--cyan); text-decoration:none; }
             <label class="f-label">Message</label>
             <textarea class="f-textarea" placeholder="What's on your mind?"></textarea>
           </div>
-          <button class="btn-primary" style="align-self:flex-start;">Send Message â</button>
+          <button class="btn-primary" style="align-self:flex-start;">Send Message</button>
         </div>
       </div>
     </div>
@@ -875,35 +758,28 @@ footer a { color:var(--cyan); text-decoration:none; }
 
 <!-- FOOTER -->
 <footer>
-  <p>Â© 2026 Kevin Ndemo Ombwochi</p>
-  <p>Built with precision Â· Nairobi, Kenya</p>
+  <p>&copy; 2026 Kevin Ndemo Ombwochi</p>
+  <p>Built with precision &middot; Nairobi, Kenya</p>
 </footer>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââ
-     MODAL 1 â Layoffs Data Cleaning
-âââââââââââââââââââââââââââââââââââââââââââ -->
-<div class="modal-overlay" id="modal1" role="dialog" aria-modal="true">
+<!-- ===== MODAL 1: Layoffs Data Cleaning ===== -->
+<div class="modal-overlay" id="modal1">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-header-info">
-        <div class="modal-type">Project_01 Â· MySQL Â· Data Engineering</div>
+      <div>
+        <div class="modal-type">Project_01 &middot; MySQL &middot; Data Engineering</div>
         <div class="modal-title">Layoffs Data Cleaning</div>
       </div>
-      <button class="modal-close" onclick="closeModal('modal1')" aria-label="Close">â</button>
+      <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
     </div>
-
     <div class="modal-body">
-
-      <!-- Overview -->
       <div class="modal-section">
         <div class="modal-section-label">Overview</div>
         <p class="modal-overview">
-          This project tackled a real-world layoffs dataset riddled with <strong>duplicate entries, inconsistent formatting, and structural nulls</strong>. Using pure MySQL, I built a systematic cleaning pipeline that standardized company names, unified date formats across 8 different patterns, resolved null values through business logic, and removed 366 duplicate records â producing a single, analysis-ready table from 2,361 raw rows.
+          This project tackled a real-world layoffs dataset riddled with <strong>duplicate entries, inconsistent formatting, and structural nulls</strong>. Using pure MySQL, I built a systematic cleaning pipeline that standardized company names, unified date formats across 8 different patterns, resolved null values through business logic, and removed 366 duplicate records &mdash; producing a single analysis-ready table from 2,361 raw rows.
         </p>
       </div>
-
-      <!-- Charts -->
       <div class="modal-section">
         <div class="modal-section-label">Key Visualizations</div>
         <div class="modal-charts-grid">
@@ -912,40 +788,24 @@ footer a { color:var(--cyan); text-decoration:none; }
             <div class="chart-wrap"><canvas id="chart1a"></canvas></div>
           </div>
           <div class="modal-chart-card">
-            <div class="modal-chart-title">Top Industries by Layoffs (cleaned data)</div>
+            <div class="modal-chart-title">Top Industries by Layoffs</div>
             <div class="chart-wrap"><canvas id="chart1b"></canvas></div>
           </div>
           <div class="modal-chart-card modal-chart-wide">
-            <div class="modal-chart-title">Layoffs Volume by Year (2020 â 2023)</div>
+            <div class="modal-chart-title">Layoffs Volume by Year (2020&ndash;2023)</div>
             <div class="chart-wrap-tall"><canvas id="chart1c"></canvas></div>
           </div>
         </div>
       </div>
-
-      <!-- Findings -->
       <div class="modal-section">
         <div class="modal-section-label">Key Findings</div>
         <div class="modal-findings-grid">
-          <div class="modal-finding">
-            <strong>15.5% Duplication Rate</strong>
-            <p>366 exact or near-duplicate records identified and safely removed using ROW_NUMBER() window functions.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Consumer Sector Hardest Hit</strong>
-            <p>Consumer and Retail industries together accounted for 29% of all recorded layoffs across the dataset.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>423 Null Values Resolved</strong>
-            <p>Nulls in company, industry, and stage columns handled via self-joins and conditional imputation logic.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>2022 Spike: 91,500 Layoffs</strong>
-            <p>Post-pandemic correction drove a 29Ã surge in layoffs vs. 2021, concentrated in tech and retail.</p>
-          </div>
+          <div class="modal-finding"><strong>15.5% Duplication Rate</strong><p>366 duplicate records identified and removed using ROW_NUMBER() window functions on key columns.</p></div>
+          <div class="modal-finding"><strong>Consumer Sector Hardest Hit</strong><p>Consumer and Retail industries together accounted for 29% of all recorded layoffs in the dataset.</p></div>
+          <div class="modal-finding"><strong>423 Null Values Resolved</strong><p>Nulls in company, industry, and stage columns handled via self-joins and conditional imputation logic.</p></div>
+          <div class="modal-finding"><strong>2022 Spike: 91,500 Layoffs</strong><p>Post-pandemic correction drove a 29x surge in layoffs vs. 2021, concentrated in tech and retail.</p></div>
         </div>
       </div>
-
-      <!-- Methodology -->
       <div class="modal-section">
         <div class="modal-section-label">Methodology</div>
         <div class="modal-method">
@@ -960,45 +820,37 @@ footer a { color:var(--cyan); text-decoration:none; }
           </ol>
         </div>
       </div>
-
     </div>
-
     <div class="modal-footer">
       <div class="modal-footer-tags">
         <span class="modal-footer-tag">MySQL</span>
         <span class="modal-footer-tag">Window Functions</span>
         <span class="modal-footer-tag">Data Cleaning</span>
         <span class="modal-footer-tag">ETL</span>
-        <span class="modal-footer-tag">SQL</span>
       </div>
-      <a href="https://github.com/Ndemo4K/mysql-layoffs-data-cleaning-project" target="_blank" class="proj-btn proj-btn-primary">View on GitHub â</a>
+      <a href="https://github.com/Ndemo4K/mysql-layoffs-data-cleaning-project" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
     </div>
   </div>
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââ
-     MODAL 2 â SaaS Customer Churn
-âââââââââââââââââââââââââââââââââââââââââââ -->
-<div class="modal-overlay" id="modal2" role="dialog" aria-modal="true">
+<!-- ===== MODAL 2: SaaS Customer Churn ===== -->
+<div class="modal-overlay" id="modal2">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-header-info">
-        <div class="modal-type">Project_02 Â· MySQL 8.0 Â· Business Intelligence</div>
+      <div>
+        <div class="modal-type">Project_02 &middot; MySQL 8.0 &middot; Business Intelligence</div>
         <div class="modal-title">SaaS Customer Churn Analysis</div>
       </div>
-      <button class="modal-close" onclick="closeModal('modal2')" aria-label="Close">â</button>
+      <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
     </div>
-
     <div class="modal-body">
-
       <div class="modal-section">
         <div class="modal-section-label">Overview</div>
         <p class="modal-overview">
-          A pure-SQL analysis of <strong>5,000 SaaS customers</strong> designed to surface churn risk before it becomes revenue loss. Using CTEs, window functions, and multi-condition CASE logic, I segmented customers into four risk tiers based on payment behaviour, days since last login, support ticket volume, and plan-level engagement â delivering a prioritised retention target list and quantifying over <strong>$2.1M in at-risk ARR</strong>.
+          A pure-SQL analysis of <strong>5,000 SaaS customers</strong> designed to surface churn risk before it becomes revenue loss. Using CTEs, window functions, and multi-condition CASE logic, I segmented customers into four risk tiers based on payment behaviour, login recency, support ticket volume, and plan-level engagement &mdash; quantifying over <strong>$2.1M in at-risk ARR</strong>.
         </p>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Visualizations</div>
         <div class="modal-charts-grid">
@@ -1016,81 +868,59 @@ footer a { color:var(--cyan); text-decoration:none; }
           </div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Findings</div>
         <div class="modal-findings-grid">
-          <div class="modal-finding">
-            <strong>18% High-Risk Customers</strong>
-            <p>900 accounts flagged as high churn risk based on combined behavioural and financial signals.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Freemium Churns 6.8Ã Faster</strong>
-            <p>Freemium plan users show a 41% churn rate vs. only 6% for Enterprise tier customers.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>45-Day Inactivity = 73% Churn</strong>
-            <p>Customers inactive for 45+ days show a 73% probability of churning within 60 days.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>$2.1M ARR at Risk</strong>
-            <p>Combined high and medium risk segments represent over $2.1M in annualised recurring revenue.</p>
-          </div>
+          <div class="modal-finding"><strong>18% High-Risk Customers</strong><p>900 accounts flagged as high churn risk based on combined behavioural and financial signals.</p></div>
+          <div class="modal-finding"><strong>Freemium Churns 6.8x Faster</strong><p>Freemium plan users show a 41% churn rate vs. only 6% for Enterprise-tier customers.</p></div>
+          <div class="modal-finding"><strong>45-Day Inactivity = 73% Churn</strong><p>Customers inactive for 45+ days show a 73% probability of churning within 60 days.</p></div>
+          <div class="modal-finding"><strong>$2.1M ARR at Risk</strong><p>High and medium risk segments combined represent over $2.1M in annualised recurring revenue.</p></div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Methodology</div>
         <div class="modal-method">
           <ol>
             <li>Profiled the customer table: schema audit, null counts, value distribution across all columns</li>
             <li>Built engagement score via weighted CASE logic (login recency, session count, feature usage)</li>
-            <li>Classified payment behaviour: on-time, delayed, failed, and churned via window LAG functions</li>
+            <li>Classified payment behaviour using window LAG functions: on-time, delayed, failed, churned</li>
             <li>Segmented customers into High / Medium / Low / Loyal risk using multi-signal scoring CTE</li>
-            <li>Calculated plan-level churn rates and ARR exposure per segment</li>
-            <li>Produced final ranked retention target list ordered by revenue impact Ã churn probability</li>
+            <li>Calculated plan-level churn rates and ARR exposure per risk segment</li>
+            <li>Produced ranked retention target list ordered by revenue impact times churn probability</li>
           </ol>
         </div>
       </div>
-
     </div>
-
     <div class="modal-footer">
       <div class="modal-footer-tags">
         <span class="modal-footer-tag">MySQL 8.0</span>
         <span class="modal-footer-tag">CTEs</span>
         <span class="modal-footer-tag">Window Functions</span>
         <span class="modal-footer-tag">Churn Analysis</span>
-        <span class="modal-footer-tag">Business Intel</span>
       </div>
-      <a href="https://github.com/Ndemo4K/SaaS-churn-data-analysis-" target="_blank" class="proj-btn proj-btn-primary">View on GitHub â</a>
+      <a href="https://github.com/Ndemo4K/SaaS-churn-data-analysis-" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
     </div>
   </div>
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââ
-     MODAL 3 â Healthcare Claims
-âââââââââââââââââââââââââââââââââââââââââââ -->
-<div class="modal-overlay" id="modal3" role="dialog" aria-modal="true">
+<!-- ===== MODAL 3: Healthcare Claims ===== -->
+<div class="modal-overlay" id="modal3">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-header-info">
-        <div class="modal-type">Project_03 Â· SQL + Tableau Â· Healthcare Analytics</div>
+      <div>
+        <div class="modal-type">Project_03 &middot; SQL + Tableau &middot; Healthcare Analytics</div>
         <div class="modal-title">Healthcare Claims Analysis</div>
       </div>
-      <button class="modal-close" onclick="closeModal('modal3')" aria-label="Close">â</button>
+      <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
     </div>
-
     <div class="modal-body">
-
       <div class="modal-section">
         <div class="modal-section-label">Overview</div>
         <p class="modal-overview">
-          This project mapped <strong>cost leakage inside a healthcare claims dataset</strong> by analysing the ratio of what providers billed versus what was actually paid, broken down by ICD/CPT procedure category, department, and member demographics. SQL handled all processing and aggregation; Tableau visualised the findings for executive consumption. The Emergency department alone showed only <strong>$0.45 paid per $1 billed</strong> â the lowest paid-to-billed ratio across all departments.
+          This project mapped <strong>cost leakage inside a healthcare claims dataset</strong> by analysing the ratio of what providers billed versus what was paid, broken down by ICD/CPT category, department, and member demographics. SQL handled all processing; Tableau visualised findings for executive consumption. The Emergency department showed only <strong>$0.45 paid per $1 billed</strong> &mdash; the worst ratio across all departments.
         </p>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Visualizations</div>
         <div class="modal-charts-grid">
@@ -1103,34 +933,20 @@ footer a { color:var(--cyan); text-decoration:none; }
             <div class="chart-wrap"><canvas id="chart3b"></canvas></div>
           </div>
           <div class="modal-chart-card modal-chart-wide">
-            <div class="modal-chart-title">Claims Volume vs Total Amount Paid â by Quarter</div>
+            <div class="modal-chart-title">Claims Volume vs Amount Paid &mdash; by Quarter</div>
             <div class="chart-wrap-tall"><canvas id="chart3c"></canvas></div>
           </div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Findings</div>
         <div class="modal-findings-grid">
-          <div class="modal-finding">
-            <strong>$469K Total Leakage</strong>
-            <p>Identified across 5 departments â Emergency alone accounts for $142K of that figure.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Emergency at $0.45/dollar</strong>
-            <p>The Emergency department's paid-to-billed ratio of 0.45 is the lowest and the primary leakage driver.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Pharmacy Most Efficient</strong>
-            <p>Pharmacy achieves a 0.89 paid-to-billed ratio â the closest to full cost recovery in the dataset.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Q4 Volume â 23%, Payments â 8%</strong>
-            <p>Claims volume surged in Q4 but payment rates declined, widening the leakage gap at year-end.</p>
-          </div>
+          <div class="modal-finding"><strong>$469K Total Leakage</strong><p>Identified across 5 departments &mdash; Emergency alone accounts for $142K of that figure.</p></div>
+          <div class="modal-finding"><strong>Emergency at $0.45/dollar</strong><p>The Emergency department's paid-to-billed ratio of 0.45 is the lowest and the primary leakage driver.</p></div>
+          <div class="modal-finding"><strong>Pharmacy Most Efficient</strong><p>Pharmacy achieves a 0.89 paid-to-billed ratio &mdash; the closest to full cost recovery in the dataset.</p></div>
+          <div class="modal-finding"><strong>Q4 Volume Up 23%, Payments Down 8%</strong><p>Claims volume surged in Q4 but payment rates declined, widening the leakage gap at year-end.</p></div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Methodology</div>
         <div class="modal-method">
@@ -1141,49 +957,41 @@ footer a { color:var(--cyan); text-decoration:none; }
             <li>Computed absolute leakage: SUM(billed - paid) per department and procedure category</li>
             <li>Analysed demographic segments (age band, member type) for leakage correlation</li>
             <li>Exported aggregated views to Tableau for executive dashboard visualisation</li>
-            <li>Produced priority action table: departments ranked by leakage magnitude and ratio severity</li>
+            <li>Produced priority action table ranked by leakage magnitude and ratio severity</li>
           </ol>
         </div>
       </div>
-
     </div>
-
     <div class="modal-footer">
       <div class="modal-footer-tags">
         <span class="modal-footer-tag">SQL</span>
         <span class="modal-footer-tag">Tableau</span>
         <span class="modal-footer-tag">ICD/CPT Codes</span>
         <span class="modal-footer-tag">Healthcare</span>
-        <span class="modal-footer-tag">Cost Analysis</span>
       </div>
-      <a href="https://github.com/Ndemo4K/healthcare-claims-analysis" target="_blank" class="proj-btn proj-btn-primary">View on GitHub â</a>
+      <a href="https://github.com/Ndemo4K/healthcare-claims-analysis" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
     </div>
   </div>
 </div>
 
 
-<!-- âââââââââââââââââââââââââââââââââââââââââââ
-     MODAL 4 â G-Plus Tracker
-âââââââââââââââââââââââââââââââââââââââââââ -->
-<div class="modal-overlay" id="modal4" role="dialog" aria-modal="true">
+<!-- ===== MODAL 4: G-Plus Tracker ===== -->
+<div class="modal-overlay" id="modal4">
   <div class="modal-box">
     <div class="modal-header">
-      <div class="modal-header-info">
-        <div class="modal-type">Project_04 Â· Google Apps Script Â· Automation</div>
+      <div>
+        <div class="modal-type">Project_04 &middot; Google Apps Script &middot; Automation</div>
         <div class="modal-title">G-Plus Tracker</div>
       </div>
-      <button class="modal-close" onclick="closeModal('modal4')" aria-label="Close">â</button>
+      <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
     </div>
-
     <div class="modal-body">
-
       <div class="modal-section">
         <div class="modal-section-label">Overview</div>
         <p class="modal-overview">
-          G-Plus is a Nairobi garbage collection business that ran entirely on paper ledgers and manual cash reconciliation. I replaced the system with a <strong>Google Sheets backend, Apps Script automation, and a mobile-first web app</strong> for field agents. Payments are now logged in real time, route performance is tracked daily, and management has a live dashboard â eliminating the 23% manual error rate and increasing captured revenue by 34% within three months of deployment.
+          G-Plus is a Nairobi garbage collection business that ran entirely on paper ledgers. I replaced the system with a <strong>Google Sheets backend, Apps Script automation, and a mobile-first web app</strong> for field agents. Payments are logged in real time, route performance tracked daily, and management has a live dashboard &mdash; eliminating the 23% manual error rate and increasing captured revenue by 34% within three months of deployment.
         </p>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Visualizations</div>
         <div class="modal-charts-grid">
@@ -1196,34 +1004,20 @@ footer a { color:var(--cyan); text-decoration:none; }
             <div class="chart-wrap"><canvas id="chart4b"></canvas></div>
           </div>
           <div class="modal-chart-card modal-chart-wide">
-            <div class="modal-chart-title">Monthly Revenue Collected â Post-Automation (KES)</div>
+            <div class="modal-chart-title">Monthly Revenue Collected Post-Automation (KES)</div>
             <div class="chart-wrap-tall"><canvas id="chart4c"></canvas></div>
           </div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Key Findings</div>
         <div class="modal-findings-grid">
-          <div class="modal-finding">
-            <strong>+34% Revenue in 3 Months</strong>
-            <p>Automated logging and real-time reconciliation captured payments that previously went unrecorded.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Errors: 23% â 2%</strong>
-            <p>Manual data entry errors dropped from 23% to under 2% of all transactions within the first month.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>Westlands at 94% Efficiency</strong>
-            <p>Westlands route leads collection performance at 94%, compared to 71% for the Kikuyu route.</p>
-          </div>
-          <div class="modal-finding">
-            <strong>100% Agent Adoption in 2 Weeks</strong>
-            <p>All 5 field agents fully adopted the mobile web app within two weeks â zero training dropouts.</p>
-          </div>
+          <div class="modal-finding"><strong>+34% Revenue in 3 Months</strong><p>Automated logging and real-time reconciliation captured payments that previously went unrecorded.</p></div>
+          <div class="modal-finding"><strong>Errors: 23% Down to 2%</strong><p>Manual data entry errors dropped from 23% to under 2% of all transactions within the first month.</p></div>
+          <div class="modal-finding"><strong>Westlands at 94% Efficiency</strong><p>Westlands route leads collection performance at 94%, compared to 71% for the Kikuyu route.</p></div>
+          <div class="modal-finding"><strong>100% Agent Adoption in 2 Weeks</strong><p>All 5 field agents adopted the mobile web app within two weeks of rollout &mdash; zero dropouts.</p></div>
         </div>
       </div>
-
       <div class="modal-section">
         <div class="modal-section-label">Methodology</div>
         <div class="modal-method">
@@ -1231,586 +1025,193 @@ footer a { color:var(--cyan); text-decoration:none; }
             <li>Audited existing paper ledger system: identified 23% error rate and revenue leakage points</li>
             <li>Designed Google Sheets schema: customers, routes, payments, and reconciliation tables</li>
             <li>Built Apps Script backend: auto-timestamping, payment status updates, and daily summaries</li>
-            <li>Developed mobile-first web app (HTML/CSS/JS) deployed via Apps Script doGet() endpoint</li>
+            <li>Developed mobile-first web app deployed via Apps Script doGet() endpoint</li>
             <li>Implemented route performance dashboard: collection rate, outstanding balances, trends</li>
             <li>Trained 5 field agents on mobile app; conducted 2-week supervised rollout period</li>
             <li>Measured pre/post KPIs at 30, 60, and 90 days post-deployment</li>
           </ol>
         </div>
       </div>
-
     </div>
-
     <div class="modal-footer">
       <div class="modal-footer-tags">
         <span class="modal-footer-tag">Google Sheets</span>
         <span class="modal-footer-tag">Apps Script</span>
         <span class="modal-footer-tag">Web App</span>
         <span class="modal-footer-tag">Automation</span>
-        <span class="modal-footer-tag">Data Tracking</span>
       </div>
-      <a href="https://github.com/Ndemo4K/g-plus-tracker" target="_blank" class="proj-btn proj-btn-primary">View on GitHub â</a>
+      <a href="https://github.com/Ndemo4K/g-plus-tracker" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
     </div>
   </div>
 </div>
 
 
 <script>
-/* âââ Typewriter âââ */
-const phrases = [
-  'Data Analyst & ICT Professional',
-  'SQL Â· Power BI Â· Excel Power Query',
-  'Turning data into decisions.',
-  'Based in Nairobi, Kenya.'
-];
-let pi=0, ci=0, del=false;
-const tw = document.getElementById('typewriter');
-function type() {
-  const w = phrases[pi];
-  if (!del) {
-    tw.textContent = w.slice(0, ++ci);
-    if (ci === w.length) { del=true; setTimeout(type, 2200); return; }
-  } else {
-    tw.textContent = w.slice(0, --ci);
-    if (ci === 0) { del=false; pi=(pi+1)%phrases.length; }
-  }
-  setTimeout(type, del ? 38 : 78);
+/* Typewriter */
+const phrases = ['Data Analyst & ICT Professional','SQL · Power BI · Excel Power Query','Turning data into decisions.','Based in Nairobi, Kenya.'];
+let pi=0,ci=0,del=false;
+const tw=document.getElementById('typewriter');
+function type(){
+  const w=phrases[pi];
+  if(!del){tw.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,2200);return;}}
+  else{tw.textContent=w.slice(0,--ci);if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
+  setTimeout(type,del?38:78);
 }
-setTimeout(type, 1400);
+setTimeout(type,1400);
 
-/* âââ Intersection Observer âââ */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
+/* Scroll reveal */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
       e.target.classList.add('visible');
-      e.target.querySelectorAll('.bar-fill').forEach(b => {
-        b.style.width = b.dataset.w + '%';
-      });
+      e.target.querySelectorAll('.bar-fill').forEach(b=>b.style.width=b.dataset.w+'%');
     }
   });
-}, { threshold: 0.14 });
+},{threshold:0.14});
+document.querySelectorAll('.reveal,.t-item,.skill-card').forEach(el=>io.observe(el));
 
-document.querySelectorAll('.reveal, .t-item, .skill-card').forEach(el => io.observe(el));
-
-/* âââ Modal System âââ */
-const chartsReady = {};
-
-function openModal(id) {
-  const overlay = document.getElementById(id);
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden';
-  if (!chartsReady[id]) {
-    chartsReady[id] = true;
-    setTimeout(() => initCharts(id), 80);
-  }
+/* Modal */
+const chartsReady={};
+function openModal(id){
+  document.getElementById(id).classList.add('active');
+  document.body.style.overflow='hidden';
+  if(!chartsReady[id]){chartsReady[id]=true;setTimeout(()=>initCharts(id),80);}
 }
-
-function closeModal(id) {
+function closeModal(id){
   document.getElementById(id).classList.remove('active');
-  document.body.style.overflow = '';
+  document.body.style.overflow='';
 }
-
-// Close on overlay click
-document.querySelectorAll('.modal-overlay').forEach(overlay => {
-  overlay.addEventListener('click', e => {
-    if (e.target === overlay) closeModal(overlay.id);
-  });
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{if(e.target===o)closeModal(o.id);});
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')document.querySelectorAll('.modal-overlay.active').forEach(m=>closeModal(m.id));
 });
 
-// Close on Escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m.id));
-  }
-});
+/* Chart.js defaults */
+Chart.defaults.color='#5a7a90';
+Chart.defaults.borderColor='rgba(0,212,255,0.11)';
+Chart.defaults.font.family="'JetBrains Mono',monospace";
+Chart.defaults.font.size=11;
 
-/* âââ Chart.js Global Defaults âââ */
-Chart.defaults.color = '#5a7a90';
-Chart.defaults.borderColor = 'rgba(0,212,255,0.11)';
-Chart.defaults.font.family = "'JetBrains Mono', monospace";
-Chart.defaults.font.size = 11;
+const CYAN='#00d4ff',ORANGE='#ff7a3c';
+const CF='rgba(0,212,255,0.15)',OF='rgba(255,122,60,0.15)';
+const GR='rgba(0,212,255,0.07)',MU='#5a7a90';
 
-const CYAN  = '#00d4ff';
-const ORANGE = '#ff7a3c';
-const CYAN_FILL = 'rgba(0,212,255,0.15)';
-const ORANGE_FILL = 'rgba(255,122,60,0.15)';
-const BORDER = 'rgba(0,212,255,0.11)';
-const MUTED  = '#5a7a90';
-const GRID   = 'rgba(0,212,255,0.07)';
-
-function baseOpts(extras = {}) {
-  return {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: { duration: 700, easing: 'easeOutQuart' },
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: '#0c1420',
-        borderColor: 'rgba(0,212,255,0.25)',
-        borderWidth: 1,
-        titleColor: '#00d4ff',
-        bodyColor: '#d4e8f0',
-        padding: 10,
-      }
-    },
-    scales: {
-      x: { grid: { color: GRID }, ticks: { color: MUTED } },
-      y: { grid: { color: GRID }, ticks: { color: MUTED } }
-    },
-    ...extras
+function tip(){return{backgroundColor:'#0c1420',borderColor:'rgba(0,212,255,0.25)',borderWidth:1,titleColor:CYAN,bodyColor:'#d4e8f0',padding:10};}
+function scales(yFmt){
+  return{
+    x:{grid:{color:GR},ticks:{color:MU}},
+    y:{grid:{color:GR},ticks:{color:MU,callback:yFmt||undefined}}
   };
 }
+function baseOpts(yFmt){
+  return{responsive:true,maintainAspectRatio:false,animation:{duration:700,easing:'easeOutQuart'},
+    plugins:{legend:{display:false},tooltip:tip()},scales:scales(yFmt)};
+}
 
-/* âââ Chart Initialisation per Modal âââ */
-function initCharts(id) {
+function initCharts(id){
 
-  /* ââ MODAL 1: Layoffs Data Cleaning ââ */
-  if (id === 'modal1') {
-    // Chart 1a â Issues resolved
-    new Chart(document.getElementById('chart1a'), {
-      type: 'bar',
-      data: {
-        labels: ['Duplicates', 'Null Values', 'Format Fixes', 'Whitespace'],
-        datasets: [{
-          data: [366, 423, 178, 91],
-          backgroundColor: [CYAN_FILL, CYAN_FILL, ORANGE_FILL, ORANGE_FILL],
-          borderColor:      [CYAN, CYAN, ORANGE, ORANGE],
-          borderWidth: 1,
-        }]
-      },
-      options: baseOpts()
-    });
+  if(id==='modal1'){
+    new Chart(document.getElementById('chart1a'),{type:'bar',
+      data:{labels:['Duplicates','Null Values','Format Fixes','Whitespace'],
+        datasets:[{data:[366,423,178,91],backgroundColor:[CF,CF,OF,OF],borderColor:[CYAN,CYAN,ORANGE,ORANGE],borderWidth:1}]},
+      options:baseOpts()});
 
-    // Chart 1b â Top Industries (horizontal bar)
-    new Chart(document.getElementById('chart1b'), {
-      type: 'bar',
-      data: {
-        labels: ['Consumer', 'Retail', 'Other', 'Transport', 'Finance', 'Healthcare'],
-        datasets: [{
-          data: [323, 271, 248, 192, 167, 143],
-          backgroundColor: CYAN_FILL,
-          borderColor: CYAN,
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        indexAxis: 'y',
-      }
-    });
+    new Chart(document.getElementById('chart1b'),{type:'bar',
+      data:{labels:['Consumer','Retail','Other','Transport','Finance','Healthcare'],
+        datasets:[{data:[323,271,248,192,167,143],backgroundColor:CF,borderColor:CYAN,borderWidth:1}]},
+      options:{...baseOpts(),indexAxis:'y'}});
 
-    // Chart 1c â Layoffs by year (wide)
-    new Chart(document.getElementById('chart1c'), {
-      type: 'bar',
-      data: {
-        labels: ['2020', '2021', '2022', '2023'],
-        datasets: [{
-          label: 'Total Layoffs',
-          data: [8200, 3100, 91500, 42800],
-          backgroundColor: [CYAN_FILL, CYAN_FILL, ORANGE_FILL, CYAN_FILL],
-          borderColor:      [CYAN, CYAN, ORANGE, CYAN],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        plugins: {
-          ...baseOpts().plugins,
-          legend: { display: true, labels: { color: MUTED, boxWidth: 12 } }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart1c'),{type:'bar',
+      data:{labels:['2020','2021','2022','2023'],
+        datasets:[{label:'Total Layoffs',data:[8200,3100,91500,42800],
+          backgroundColor:[CF,CF,OF,CF],borderColor:[CYAN,CYAN,ORANGE,CYAN],borderWidth:1}]},
+      options:{...baseOpts(),plugins:{legend:{display:true,labels:{color:MU,boxWidth:12}},tooltip:tip()}}});
   }
 
-  /* ââ MODAL 2: SaaS Churn ââ */
-  if (id === 'modal2') {
-    // Chart 2a â Donut: Risk Segments
-    new Chart(document.getElementById('chart2a'), {
-      type: 'doughnut',
-      data: {
-        labels: ['High Risk', 'Medium Risk', 'Low Risk', 'Loyal'],
-        datasets: [{
-          data: [18, 27, 31, 24],
-          backgroundColor: [
-            'rgba(255,60,60,0.7)',
-            'rgba(255,165,0,0.7)',
-            CYAN_FILL,
-            'rgba(0,255,128,0.25)'
-          ],
-          borderColor: ['#ff3c3c','#ffa500', CYAN, '#00ff80'],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 700 },
-        plugins: {
-          legend: {
-            display: true,
-            position: 'bottom',
-            labels: { color: MUTED, boxWidth: 12, padding: 10, font: { size: 10 } }
-          },
-          tooltip: {
-            backgroundColor: '#0c1420',
-            borderColor: 'rgba(0,212,255,0.25)',
-            borderWidth: 1,
-            titleColor: CYAN,
-            bodyColor: '#d4e8f0',
-            callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed}%` }
-          }
-        }
-      }
-    });
+  if(id==='modal2'){
+    new Chart(document.getElementById('chart2a'),{type:'doughnut',
+      data:{labels:['High Risk','Medium Risk','Low Risk','Loyal'],
+        datasets:[{data:[18,27,31,24],
+          backgroundColor:['rgba(255,60,60,0.7)',OF,CF,'rgba(0,255,128,0.25)'],
+          borderColor:['#ff3c3c',ORANGE,CYAN,'#00ff80'],borderWidth:1}]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:true,position:'bottom',labels:{color:MU,boxWidth:12,padding:10,font:{size:10}}},tooltip:{...tip(),callbacks:{label:ctx=>` ${ctx.label}: ${ctx.parsed}%`}}}}});
 
-    // Chart 2b â Churn rate by plan
-    new Chart(document.getElementById('chart2b'), {
-      type: 'bar',
-      data: {
-        labels: ['Freemium', 'Basic', 'Pro', 'Enterprise'],
-        datasets: [{
-          data: [41, 27, 14, 6],
-          backgroundColor: [ORANGE_FILL, ORANGE_FILL, CYAN_FILL, CYAN_FILL],
-          borderColor:      [ORANGE, ORANGE, CYAN, CYAN],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED } },
-          y: {
-            grid: { color: GRID }, ticks: { color: MUTED, callback: v => v + '%' },
-            max: 55
-          }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart2b'),{type:'bar',
+      data:{labels:['Freemium','Basic','Pro','Enterprise'],
+        datasets:[{data:[41,27,14,6],backgroundColor:[OF,OF,CF,CF],borderColor:[ORANGE,ORANGE,CYAN,CYAN],borderWidth:1}]},
+      options:{...baseOpts(v=>v+'%'),scales:{x:{grid:{color:GR},ticks:{color:MU}},y:{grid:{color:GR},ticks:{color:MU,callback:v=>v+'%'},max:55}}}});
 
-    // Chart 2c â Churn probability by engagement band
-    new Chart(document.getElementById('chart2c'), {
-      type: 'bar',
-      data: {
-        labels: ['0â20%', '21â40%', '41â60%', '61â80%', '81â100%'],
-        datasets: [{
-          label: 'Churn Probability (%)',
-          data: [78, 54, 31, 12, 4],
-          backgroundColor: [
-            'rgba(255,60,60,0.65)',
-            ORANGE_FILL,
-            'rgba(255,210,0,0.25)',
-            CYAN_FILL,
-            'rgba(0,255,128,0.25)'
-          ],
-          borderColor: ['#ff3c3c', ORANGE, '#ffd200', CYAN, '#00ff80'],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        plugins: {
-          ...baseOpts().plugins,
-          legend: { display: true, labels: { color: MUTED, boxWidth: 12 } }
-        },
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED }, title: { display: true, text: 'Engagement Score', color: MUTED, font: { size: 10 } } },
-          y: { grid: { color: GRID }, ticks: { color: MUTED, callback: v => v + '%' }, max: 100 }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart2c'),{type:'bar',
+      data:{labels:['0-20%','21-40%','41-60%','61-80%','81-100%'],
+        datasets:[{label:'Churn Probability (%)',data:[78,54,31,12,4],
+          backgroundColor:['rgba(255,60,60,0.65)',OF,'rgba(255,210,0,0.25)',CF,'rgba(0,255,128,0.25)'],
+          borderColor:['#ff3c3c',ORANGE,'#ffd200',CYAN,'#00ff80'],borderWidth:1}]},
+      options:{...baseOpts(),plugins:{legend:{display:true,labels:{color:MU,boxWidth:12}},tooltip:tip()},
+        scales:{x:{grid:{color:GR},ticks:{color:MU},title:{display:true,text:'Engagement Score',color:MU,font:{size:10}}},
+          y:{grid:{color:GR},ticks:{color:MU,callback:v=>v+'%'},max:100}}}});
   }
 
-  /* ââ MODAL 3: Healthcare Claims ââ */
-  if (id === 'modal3') {
-    // Chart 3a â Paid-to-Billed ratio (horizontal bar)
-    new Chart(document.getElementById('chart3a'), {
-      type: 'bar',
-      data: {
-        labels: ['Emergency', 'Neurology', 'Orthopedics', 'Cardiology', 'Radiology', 'Pharmacy'],
-        datasets: [{
-          data: [0.45, 0.58, 0.61, 0.72, 0.83, 0.89],
-          backgroundColor: [
-            'rgba(255,60,60,0.65)',
-            ORANGE_FILL, ORANGE_FILL,
-            CYAN_FILL, CYAN_FILL,
-            'rgba(0,255,128,0.25)'
-          ],
-          borderColor: ['#ff3c3c', ORANGE, ORANGE, CYAN, CYAN, '#00ff80'],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        indexAxis: 'y',
-        scales: {
-          x: {
-            grid: { color: GRID }, ticks: { color: MUTED },
-            min: 0, max: 1,
-            title: { display: true, text: 'Paid / Billed Ratio', color: MUTED, font: { size: 10 } }
-          },
-          y: { grid: { color: GRID }, ticks: { color: MUTED } }
-        }
-      }
-    });
+  if(id==='modal3'){
+    new Chart(document.getElementById('chart3a'),{type:'bar',
+      data:{labels:['Emergency','Neurology','Orthopedics','Cardiology','Radiology','Pharmacy'],
+        datasets:[{data:[0.45,0.58,0.61,0.72,0.83,0.89],
+          backgroundColor:['rgba(255,60,60,0.65)',OF,OF,CF,CF,'rgba(0,255,128,0.25)'],
+          borderColor:['#ff3c3c',ORANGE,ORANGE,CYAN,CYAN,'#00ff80'],borderWidth:1}]},
+      options:{...baseOpts(),indexAxis:'y',
+        scales:{x:{grid:{color:GR},ticks:{color:MU},min:0,max:1,title:{display:true,text:'Paid / Billed Ratio',color:MU,font:{size:10}}},
+          y:{grid:{color:GR},ticks:{color:MU}}}}});
 
-    // Chart 3b â Cost leakage by dept
-    new Chart(document.getElementById('chart3b'), {
-      type: 'bar',
-      data: {
-        labels: ['Emergency', 'Orthopedics', 'Neurology', 'Cardiology', 'Radiology'],
-        datasets: [{
-          data: [142, 118, 97, 78, 34],
-          backgroundColor: [ORANGE_FILL, ORANGE_FILL, CYAN_FILL, CYAN_FILL, CYAN_FILL],
-          borderColor:      [ORANGE, ORANGE, CYAN, CYAN, CYAN],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED } },
-          y: { grid: { color: GRID }, ticks: { color: MUTED, callback: v => '$' + v + 'K' } }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart3b'),{type:'bar',
+      data:{labels:['Emergency','Orthopedics','Neurology','Cardiology','Radiology'],
+        datasets:[{data:[142,118,97,78,34],backgroundColor:[OF,OF,CF,CF,CF],borderColor:[ORANGE,ORANGE,CYAN,CYAN,CYAN],borderWidth:1}]},
+      options:{...baseOpts(v=>'$'+v+'K')}});
 
-    // Chart 3c â Claims volume vs paid by quarter
-    new Chart(document.getElementById('chart3c'), {
-      type: 'bar',
-      data: {
-        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
-        datasets: [
-          {
-            label: 'Claims Volume',
-            data: [1240, 1380, 1290, 1590],
-            backgroundColor: CYAN_FILL,
-            borderColor: CYAN,
-            borderWidth: 1,
-            yAxisID: 'y',
-          },
-          {
-            label: 'Total Paid ($K)',
-            data: [680, 740, 710, 790],
-            backgroundColor: ORANGE_FILL,
-            borderColor: ORANGE,
-            borderWidth: 1,
-            yAxisID: 'y1',
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 700 },
-        plugins: {
-          legend: { display: true, labels: { color: MUTED, boxWidth: 12 } },
-          tooltip: {
-            backgroundColor: '#0c1420',
-            borderColor: 'rgba(0,212,255,0.25)',
-            borderWidth: 1,
-            titleColor: CYAN,
-            bodyColor: '#d4e8f0',
-          }
-        },
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED } },
-          y: {
-            type: 'linear', position: 'left',
-            grid: { color: GRID }, ticks: { color: CYAN },
-            title: { display: true, text: 'Claims Volume', color: CYAN, font: { size: 10 } }
-          },
-          y1: {
-            type: 'linear', position: 'right',
-            grid: { drawOnChartArea: false }, ticks: { color: ORANGE, callback: v => '$' + v + 'K' },
-            title: { display: true, text: 'Total Paid', color: ORANGE, font: { size: 10 } }
-          }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart3c'),{type:'bar',
+      data:{labels:['Q1','Q2','Q3','Q4'],
+        datasets:[
+          {label:'Claims Volume',data:[1240,1380,1290,1590],backgroundColor:CF,borderColor:CYAN,borderWidth:1,yAxisID:'y'},
+          {label:'Total Paid ($K)',data:[680,740,710,790],backgroundColor:OF,borderColor:ORANGE,borderWidth:1,yAxisID:'y1'}
+        ]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:true,labels:{color:MU,boxWidth:12}},tooltip:tip()},
+        scales:{x:{grid:{color:GR},ticks:{color:MU}},
+          y:{type:'linear',position:'left',grid:{color:GR},ticks:{color:CYAN},title:{display:true,text:'Claims Volume',color:CYAN,font:{size:10}}},
+          y1:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:ORANGE,callback:v=>'$'+v+'K'},title:{display:true,text:'Total Paid',color:ORANGE,font:{size:10}}}}}});
   }
 
-  /* ââ MODAL 4: G-Plus Tracker ââ */
-  if (id === 'modal4') {
-    const months = ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+  if(id==='modal4'){
+    const months=['Month 1','Month 2','Month 3','Month 4','Month 5','Month 6'];
 
-    // Chart 4a â Manual vs Automated collection rates
-    new Chart(document.getElementById('chart4a'), {
-      type: 'line',
-      data: {
-        labels: months,
-        datasets: [
-          {
-            label: 'Manual',
-            data: [62, 65, 59, 68, 61, 63],
-            borderColor: MUTED,
-            backgroundColor: 'rgba(90,122,144,0.1)',
-            borderWidth: 2,
-            borderDash: [5,4],
-            pointBackgroundColor: MUTED,
-            pointRadius: 4,
-            tension: 0.3,
-          },
-          {
-            label: 'Automated',
-            data: [62, 71, 79, 86, 91, 94],
-            borderColor: CYAN,
-            backgroundColor: CYAN_FILL,
-            borderWidth: 2,
-            pointBackgroundColor: CYAN,
-            pointRadius: 4,
-            tension: 0.3,
-            fill: true,
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 700 },
-        plugins: {
-          legend: { display: true, labels: { color: MUTED, boxWidth: 12 } },
-          tooltip: {
-            backgroundColor: '#0c1420',
-            borderColor: 'rgba(0,212,255,0.25)',
-            borderWidth: 1,
-            titleColor: CYAN,
-            bodyColor: '#d4e8f0',
-            callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y}%` }
-          }
-        },
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED } },
-          y: { grid: { color: GRID }, ticks: { color: MUTED, callback: v => v + '%' }, min: 50, max: 100 }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart4a'),{type:'line',
+      data:{labels:months,datasets:[
+        {label:'Manual',data:[62,65,59,68,61,63],borderColor:MU,backgroundColor:'rgba(90,122,144,0.1)',borderWidth:2,borderDash:[5,4],pointBackgroundColor:MU,pointRadius:4,tension:0.3},
+        {label:'Automated',data:[62,71,79,86,91,94],borderColor:CYAN,backgroundColor:CF,borderWidth:2,pointBackgroundColor:CYAN,pointRadius:4,tension:0.3,fill:true}
+      ]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:true,labels:{color:MU,boxWidth:12}},tooltip:{...tip(),callbacks:{label:ctx=>` ${ctx.dataset.label}: ${ctx.parsed.y}%`}}},
+        scales:{x:{grid:{color:GR},ticks:{color:MU}},y:{grid:{color:GR},ticks:{color:MU,callback:v=>v+'%'},min:50,max:100}}}});
 
-    // Chart 4b â Route efficiency (horizontal bar)
-    new Chart(document.getElementById('chart4b'), {
-      type: 'bar',
-      data: {
-        labels: ['Westlands', 'Kilimani', 'Karen', 'Ngong', 'Kikuyu'],
-        datasets: [{
-          data: [94, 89, 85, 78, 71],
-          backgroundColor: [
-            'rgba(0,255,128,0.25)', CYAN_FILL, CYAN_FILL, ORANGE_FILL, ORANGE_FILL
-          ],
-          borderColor: ['#00ff80', CYAN, CYAN, ORANGE, ORANGE],
-          borderWidth: 1,
-        }]
-      },
-      options: {
-        ...baseOpts(),
-        indexAxis: 'y',
-        scales: {
-          x: {
-            grid: { color: GRID }, ticks: { color: MUTED, callback: v => v + '%' },
-            min: 60, max: 100
-          },
-          y: { grid: { color: GRID }, ticks: { color: MUTED } }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart4b'),{type:'bar',
+      data:{labels:['Westlands','Kilimani','Karen','Ngong','Kikuyu'],
+        datasets:[{data:[94,89,85,78,71],
+          backgroundColor:['rgba(0,255,128,0.25)',CF,CF,OF,OF],
+          borderColor:['#00ff80',CYAN,CYAN,ORANGE,ORANGE],borderWidth:1}]},
+      options:{...baseOpts(),indexAxis:'y',
+        scales:{x:{grid:{color:GR},ticks:{color:MU,callback:v=>v+'%'},min:60,max:100},y:{grid:{color:GR},ticks:{color:MU}}}}});
 
-    // Chart 4c â Monthly revenue post-automation (line, wide)
-    new Chart(document.getElementById('chart4c'), {
-      type: 'line',
-      data: {
-        labels: months,
-        datasets: [{
-          label: 'Revenue Collected (KES)',
-          data: [48000, 54500, 61200, 69800, 76400, 82100],
-          borderColor: ORANGE,
-          backgroundColor: ORANGE_FILL,
-          borderWidth: 2,
-          pointBackgroundColor: ORANGE,
-          pointRadius: 5,
-          tension: 0.35,
-          fill: true,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 700 },
-        plugins: {
-          legend: { display: true, labels: { color: MUTED, boxWidth: 12 } },
-          tooltip: {
-            backgroundColor: '#0c1420',
-            borderColor: 'rgba(0,212,255,0.25)',
-            borderWidth: 1,
-            titleColor: ORANGE,
-            bodyColor: '#d4e8f0',
-            callbacks: { label: ctx => ` KES ${ctx.parsed.y.toLocaleString()}` }
-          }
-        },
-        scales: {
-          x: { grid: { color: GRID }, ticks: { color: MUTED } },
-          y: { grid: { color: GRID }, ticks: { color: MUTED, callback: v => 'KES ' + (v/1000).toFixed(0) + 'K' } }
-        }
-      }
-    });
+    new Chart(document.getElementById('chart4c'),{type:'line',
+      data:{labels:months,datasets:[{
+        label:'Revenue Collected (KES)',data:[48000,54500,61200,69800,76400,82100],
+        borderColor:ORANGE,backgroundColor:OF,borderWidth:2,pointBackgroundColor:ORANGE,pointRadius:5,tension:0.35,fill:true
+      }]},
+      options:{responsive:true,maintainAspectRatio:false,animation:{duration:700},
+        plugins:{legend:{display:true,labels:{color:MU,boxWidth:12}},tooltip:{...tip(),titleColor:ORANGE,callbacks:{label:ctx=>` KES ${ctx.parsed.y.toLocaleString()}`}}},
+        scales:{x:{grid:{color:GR},ticks:{color:MU}},y:{grid:{color:GR},ticks:{color:MU,callback:v=>'KES '+(v/1000).toFixed(0)+'K'}}}}});
   }
 }
-</script>
-
-
-<script id="github-auto-sync">
-// Auto-sync projects from GitHub API
-(function() {
-  const GITHUB_USER = 'Ndemo4K';
-  const SKIP_REPOS = ['Ndemo4K.github.io', 'Ndemo4K'];
-  
-  const PINNED = [
-    { tag: 'Project_01 · SQL', name: 'Layoffs Data Cleaning', desc: 'End-to-end SQL data cleaning project covering standardization, deduplication, null handling, and validation — transforming raw layoffs data into analysis-ready tables.', tags: ['MySQL', 'Data Cleaning', 'SQL'], url: 'https://github.com/Ndemo4K' },
-    { tag: 'Project_02 · SQL', name: 'SaaS Customer Churn Analysis', desc: 'Pure SQL churn analysis classifying customers by financial behavior, engagement patterns, and usage trends — delivering actionable business intelligence.', tags: ['MySQL 8.0', 'Churn Analysis', 'Business Intel'], url: 'https://github.com/Ndemo4K' },
-    { tag: 'Project_03 · SQL + Tableau', name: 'Healthcare Claims Analysis', desc: 'Identified healthcare cost leakage by analysing ICD/CPT codes, member demographics, and paid-to-billed ratios — with SQL processing and Tableau dashboards.', tags: ['SQL', 'Tableau', 'Healthcare'], url: 'https://github.com/Ndemo4K' },
-    { tag: 'Project_04 · Automation', name: 'G-Plus Tracker', desc: 'Transformed a Nairobi garbage collection business manual payment system into a data-driven automation — built with Google Sheets, Apps Script, and a mobile-first web app.', tags: ['Google Sheets', 'Apps Script', 'Web App'], url: 'https://github.com/Ndemo4K' },
-  ];
-
-  function getTag(name) {
-    name = name.toLowerCase();
-    if (/ml|model|predict|price/.test(name)) return 'Machine Learning';
-    if (/sql|query|db/.test(name)) return 'SQL';
-    if (/dashboard|bi|power/.test(name)) return 'Power BI';
-    if (/scrape|scraper|etl/.test(name)) return 'Data Engineering';
-    if (/auto|script|bot|tracker/.test(name)) return 'Automation';
-    return 'Python';
-  }
-
-  function buildCard(p) {
-    const tags = p.tags.map(t => '<span class="tag">' + t + '</span>').join('');
-    return '<div class="project-card"><span class="project-tag">' + p.tag + '</span><h3>' + p.name + '</h3><p>' + p.desc + '</p><div class="project-tags">' + tags + '</div><a href="' + p.url + '" target="_blank">↗</a></div>';
-  }
-
-  fetch('https://api.github.com/users/' + GITHUB_USER + '/repos?sort=pushed&per_page=50')
-    .then(r => r.json())
-    .then(repos => {
-      const container = document.getElementById('projects-container');
-      if (!container) return;
-      
-      // Start with pinned
-      let html = PINNED.map(buildCard).join('');
-      
-      // Add GitHub repos
-      let idx = PINNED.length + 1;
-      repos.forEach(repo => {
-        if (SKIP_REPOS.includes(repo.name) || repo.fork) return;
-        const tag = getTag(repo.name);
-        const name = repo.name.replace(/-/g, ' ').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-        const desc = repo.description || 'A ' + tag + ' project by Kevin Ndemo.';
-        const topics = repo.topics && repo.topics.length ? repo.topics.slice(0,4) : [tag];
-        html += buildCard({ tag: 'Project_0' + idx + ' · ' + tag, name, desc, tags: topics, url: repo.html_url });
-        idx++;
-      });
-      
-      container.innerHTML = html;
-    })
-    .catch(() => {
-      // Fallback: keep static content if API fails
-    });
-})();
 </script>
 </body>
 </html>
